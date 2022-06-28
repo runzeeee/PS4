@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { WeatherData } from '../models/weather.model';
 import { WeatherService } from '../services/weather.service';
+import {ChildComponent} from "../child/child.component";
+
 
 
 @Component({
@@ -9,34 +11,33 @@ import { WeatherService } from '../services/weather.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  title = 'httpClient';
-  currentWeather = {
-    temperature: 0,
-    pressure: 0,
-    humidity: 0
-  };
 
-
-  constructor(private weatherService: WeatherService) { }
-  cityName: string = 'Boston';
-  weatherData?: WeatherData;
+  @Input() weatherData?: WeatherData
+  constructor() { }
   ngOnInit(): void {
-    this.getWeatherData(this.cityName);
-    this.cityName = '';
+
   }
-  onSubmit() {
-    this.getWeatherData(this.cityName);
-    this.cityName = '';
-  }
-  private getWeatherData(cityName: string) {
-    this.weatherService.getWeatherData(cityName)
-      .subscribe({
-        next: (response) => {
-          this.weatherData = response;
-          console.log(response);
-        }
-      });
-  }
+
+  // constructor(private weatherService: WeatherService) { }
+  // cityName: string = 'Beijing';
+  // weatherData?: WeatherData;
+  // ngOnInit(): void {
+  //   this.getWeatherData(this.cityName);
+  //   this.cityName = '';
+  // }
+  // onSubmit() {
+  //   this.getWeatherData(this.cityName);
+  //   this.cityName = '';
+  // }
+  // private getWeatherData(cityName: string) {
+  //   this.weatherService.getWeatherData(cityName)
+  //     .subscribe({
+  //       next: (response) => {
+  //         this.weatherData = response;
+  //         console.log(response);
+  //       }
+  //     });
+  // }
 
 
 

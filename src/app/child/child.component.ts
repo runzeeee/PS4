@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {WeatherService} from "../services/weather.service";
 import {WeatherData} from "../models/weather.model";
 
@@ -29,6 +29,5 @@ export class ChildComponent implements OnInit {
         }
       });
   }
-
 
 }

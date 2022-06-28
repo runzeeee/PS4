@@ -21,12 +21,15 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
-<div *ngIf="weatherData">
-  City: {{weatherData.name}}
-  <br>
-  Temp: {{weatherData.main.temp}}
-  <br>
-  Pressure: {{weatherData.main.pressure}}
-  <br>
-  Humidity : {{weatherData.main.humidity}}
-</div>
+
+<!--<div *ngIf="weatherData">-->
+<!--  City: {{weatherData.name}}-->
+<!--  <br>-->
+<!--  Temp: {{weatherData.main.temp}}-->
+<!--  <br>-->
+<!--  Pressure: {{weatherData.main.pressure}}-->
+<!--  <br>-->
+<!--  Humidity : {{weatherData.main.humidity}}-->
+<!--</div>-->
+
+<app-form [weatherData]="weatherData"></app-form>
