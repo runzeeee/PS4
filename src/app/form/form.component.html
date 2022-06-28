@@ -1,0 +1,24 @@
+<h2>HttpClient running in a service</h2>
+<div>
+  <form #form=ngForm (submit)="onSubmit">
+    <input type="text" placeholder="Search City" name="City" [(ngModel)]="cityName">
+  </form>
+
+</div>
+
+
+<br/>
+<div *ngIf="weatherData">
+  Temp: {{weatherData.main.temp}}
+  Pressure: {{weatherData.main.pressure}}
+  Humidity : {{weatherData.main.humidity}}
+
+</div>
+Current weather: <br/>
+Temp: {{currentWeather.temperature | number:'3.5'}}
+Pressure: {{currentWeather.pressure}}
+Humidity : {{currentWeather.humidity}}
+
+
+<hr/>
+

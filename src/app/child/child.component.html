@@ -1,0 +1,21 @@
+<p>child works!</p>
+<!--<input type="text" placeholder="Search City" name="City">-->
+<!--<button (click)="onSubmit">Search</button>-->
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit()">
+    <input type="text" placeholder="Search city" name="city" [(ngModel)]="cityName">
+  </form>
+</div>
+<!--<div class="container" *ngif="weatherData">-->
+<!--  <div class="upper-data">-->
+<!--    <div class="weather-data">-->
+<!--      <div class="location">{{ weatherData.name }}</div>-->
+<!--      <div class="temperature">{{ weatherData.main.temp | number: '1.0-0'}}°C</div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<div *ngIf="weatherData">
+  Temp: {{weatherData.main.temp}}
+  Pressure: {{weatherData.main.pressure}}
+  Humidity : {{weatherData.main.humidity}}
+</div>
